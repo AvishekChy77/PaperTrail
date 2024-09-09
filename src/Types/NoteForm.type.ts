@@ -12,3 +12,7 @@ export type NoteData = {
 export type Note = NoteData & {
   id: string;
 };
+
+export type NoteFormProps = {
+  onSubmit: (data: NoteData) => void;
+};

@@ -1,4 +1,5 @@
-import NoteForm from "../../Component/NoteForm.jsx"
+import NoteForm from "../../Component/NoteForm";
+
 const NewNote = () => {
   return (
     <div>

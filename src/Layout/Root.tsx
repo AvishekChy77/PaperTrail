@@ -1,10 +1,11 @@
+import { Container } from "react-bootstrap";
 import { Outlet } from "react-router-dom";
 
 const Root = () => {
   return (
-    <div>
+    <Container className="my-4">
       <Outlet />
-    </div>
+    </Container>
   );
 };
 

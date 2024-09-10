@@ -16,7 +16,7 @@ const NoteForm = ({ onSubmit, onAddTag, availableTags }: NoteFormProps) => {
     onSubmit({
       title: titleRef.current!.value,
       markdown: markDownRef.current!.value,
-      tags: [],
+      tags: selectedTags,
     });
   };
 
@@ -62,7 +62,9 @@ const NoteForm = ({ onSubmit, onAddTag, availableTags }: NoteFormProps) => {
           <Form.Control ref={markDownRef} required as="textarea" rows={15} />
         </Form.Group>
         <Stack direction="horizontal" gap={2}>
-          <Button variant="primary">Save</Button>
+          <Button type="submit" variant="primary">
+            Save
+          </Button>
           <NavLink to="..">
             <Button variant="outline-dark">Cancel</Button>
           </NavLink>

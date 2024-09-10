@@ -16,3 +16,13 @@ export type Note = NoteData & {
 export type NoteFormProps = {
   onSubmit: (data: NoteData) => void;
 };
+
+export type RawNoteData = {
+  title: string;
+  markdown: string;
+  tagIds: string[];
+};
+
+export type RawNote = RawNoteData & {
+  id: string;
+};

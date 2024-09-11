@@ -28,3 +28,9 @@ export type RawNoteData = {
 export type RawNote = RawNoteData & {
   id: string;
 };
+
+export type NoteCardThumbnailProps = {
+  id: string;
+  title: string;
+  tags: Tag[];
+};

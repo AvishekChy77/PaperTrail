@@ -20,7 +20,7 @@ const NoteForm = ({ onSubmit, onAddTag, availableTags }: NoteFormProps) => {
       tags: selectedTags,
     });
 
-    navigate("..");
+    setTimeout(() => navigate("/"), 100);
   };
 
   return (

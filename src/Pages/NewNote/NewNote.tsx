@@ -8,6 +8,7 @@ const NewNote = () => {
   const [notes, setNotes] = useLocalStorage<RawNote[]>("NOTES", []);
   const [tags, setTags] = useLocalStorage<Tag[]>("TAGS", []);
 
+  console.log(notes);
   const notesWithTags = useMemo(() => {
     return notes.map((note) => {
       return {
@@ -24,6 +25,7 @@ const NewNote = () => {
         { ...data, id: uuidv4(), tagIds: tags.map((tag) => tag.id) },
       ];
     });
+    console.log(notes);
   };
 
   const onAddTag = (tag: Tag) => {

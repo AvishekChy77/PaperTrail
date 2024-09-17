@@ -34,3 +34,7 @@ export type NoteCardThumbnailProps = {
   title: string;
   tags: Tag[];
 };
+
+export type NoteLayoutProps = {
+  notes: Note[];
+};

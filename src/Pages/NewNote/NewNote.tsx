@@ -1,4 +1,3 @@
-import { useMemo } from "react";
 import { v4 as uuidv4 } from "uuid";
 import NoteForm from "../../Component/NoteForm";
 import useLocalStorage from "../../Hooks/useLocalStorage";
@@ -9,14 +8,14 @@ const NewNote = () => {
   const [tags, setTags] = useLocalStorage<Tag[]>("TAGS", []);
 
   console.log(notes);
-  const notesWithTags = useMemo(() => {
-    return notes.map((note) => {
-      return {
-        ...note,
-        tags: tags.filter((tag) => note.tagIds.includes(tag.id)),
-      };
-    });
-  }, [notes, tags]);
+  // const notesWithTags = useMemo(() => {
+  //   return notes.map((note) => {
+  //     return {
+  //       ...note,
+  //       tags: tags.filter((tag) => note.tagIds.includes(tag.id)),
+  //     };
+  //   });
+  // }, [notes, tags]);
 
   const handleCreateNote = ({ tags, ...data }: NoteData) => {
     setNotes((prevNotes) => {

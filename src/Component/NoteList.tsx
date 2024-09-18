@@ -35,9 +35,9 @@ const NoteList = ({ availableTags, notes }: NoteListProps) => {
         <Col xs="auto">
           <Stack gap={2} direction="horizontal">
             <NavLink to="/new">
-              <Button className="primary">Create</Button>
+              <Button variant="primary">Create</Button>
             </NavLink>
-            <Button className="outline-dark">Edit Tags</Button>
+            <Button variant="outline-dark">Edit Tags</Button>
           </Stack>
         </Col>
       </Row>

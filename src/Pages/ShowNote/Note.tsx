@@ -1,10 +1,21 @@
 import { Badge, Button, Col, Row, Stack } from "react-bootstrap";
 import ReactMarkdown from "react-markdown";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
+import useLocalStorage from "../../Hooks/useLocalStorage";
 import useNote from "../../Hooks/useNote";
+import { RawNote } from "../../Types/NoteForm.type";
 
 const Note = () => {
+  const [notes, setNotes] = useLocalStorage<RawNote[]>("NOTES", []);
   const note = useNote();
+  const navigate = useNavigate();
+
+  const handleDelete = () => {
+    setNotes((prevNote) => {
+      return prevNote.filter((n) => n.id !== note.id);
+    });
+    setTimeout(() => navigate("/"), 100);
+  };
   return (
     <>
       <Row className="align-items-center mb-4">
@@ -25,7 +36,9 @@ const Note = () => {
             <NavLink to={`/${note.id}/edit`}>
               <Button variant="primary">Edit</Button>
             </NavLink>
-            <Button variant="outline-danger">Delete</Button>
+            <Button onClick={handleDelete} variant="outline-danger">
+              Delete
+            </Button>
             <NavLink to="/">
               <Button variant="outline-dark">Back</Button>
             </NavLink>

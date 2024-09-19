@@ -15,10 +15,33 @@ const Home = () => {
       };
     });
   }, [notes, tags]);
+
+  const updateTag = (id: string, label: string) => {
+    setTags((prevTags) => {
+      return prevTags.map((tag) => {
+        if (tag.id === id) {
+          return { ...tag, label };
+        }
+        return tag;
+      });
+    });
+  };
+
+  const deleteTag = (id: string) => {
+    setTags((prevTags) => {
+      return prevTags.filter((tag) => tag.id !== id);
+    });
+  };
+
   return (
     <div>
       <h1 className="mb-4">Home</h1>
-      <NoteList notes={notesWithTags} availableTags={tags} />
+      <NoteList
+        notes={notesWithTags}
+        availableTags={tags}
+        onUpdateTag={updateTag}
+        onDeleteTag={deleteTag}
+      />
     </div>
   );
 };

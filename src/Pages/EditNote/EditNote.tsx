@@ -38,7 +38,7 @@ const EditNote = () => {
 
   return (
     <div>
-      <h1 className="mb-4">Edit Note</h1>
+      <h3 className="mb-4">Edit Note</h3>
       <NoteForm
         title={note.title}
         markdown={note.markdown}

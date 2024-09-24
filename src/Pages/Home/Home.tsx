@@ -35,7 +35,6 @@ const Home = () => {
 
   return (
     <div>
-      <h1 className="mb-4">Home</h1>
       <NoteList
         notes={notesWithTags}
         availableTags={tags}

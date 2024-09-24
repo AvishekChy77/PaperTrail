@@ -33,7 +33,7 @@ const NewNote = () => {
 
   return (
     <div>
-      <h1 className="mb-4">New Note</h1>
+      <h3 className="mb-4">New Note</h3>
       <NoteForm
         onSubmit={handleCreateNote}
         onAddTag={onAddTag}
